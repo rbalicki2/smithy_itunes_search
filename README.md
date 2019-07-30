@@ -30,11 +30,11 @@
 
 ### State management
 
-The `smithy` runtime does not know about the state. The state is entirely managed by you, the developer, exactly how you would expect it to work. First, a mutable variable is declared, and then it is used within the `smd!` block. See, for example, [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L32-L61).
+The `smithy` runtime does not know about the state. The state is entirely managed by you, the developer, exactly how you would expect it to work. First, a mutable variable is declared, and then it is used within the `smd!` block. See, for example, [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L24) and [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L63).
 
 ### API calls
 
-Using Smithy's `unwrapped_promise_from_future` method, we are able to make API calls and declaratively render them. See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L66-L80) for its usage in the codebase. A more concise example is as follows:
+Using Smithy's `unwrapped_promise_from_future` method, we are able to make API calls and declaratively render them. See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L72-L82) for its usage in the codebase. A more concise example is as follows:
 
 ```rs
 let track_id = 299608205;
@@ -52,7 +52,7 @@ smd!({
 
 ### Subcomponents
 
-Subcomponents in Smithy are just interpolated components. There is nothing magical and no special syntax. See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L72-L74) and [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L149-L188).
+Subcomponents in Smithy are just interpolated components. There is nothing magical and no special syntax. See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L37-L38) and [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L76-L78).
 
 For example:
 
@@ -76,7 +76,7 @@ smd!(
 
 Routing is entirely within Rust-land, using a `Page` enum and an `on_hash_change` event handler. There are no anchor tags to get around the borrow checker, though the app works just as well with anchor tags.
 
-See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L37), [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/lib.rs#L73) and [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/types.rs#L10-L50).
+See [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L23), [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/app.rs#L28-L31) and [here](https://github.com/rbalicki2/smithy_itunes_search/blob/master/src/types.rs#L10-L50).
 
 Rolling your own routing in Smithy can be as simple as:
 
