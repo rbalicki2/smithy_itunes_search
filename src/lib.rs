@@ -14,7 +14,7 @@ use wasm_bindgen::{
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen(start)]
-pub fn main_js() {
+pub fn main() {
   // This provides better error messages in debug mode.
   // It's disabled in release mode so it doesn't bloat up the file size.
   #[cfg(debug_assertions)]

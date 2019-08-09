@@ -51,22 +51,24 @@ fn render_search<'a>(
       Smithy iTunes music search
       <div><small class="text-muted">Search for your favorite artists and songs</small></div>
     </h1>
-    <p><input
-      class="form-control"
-      autofocus
-      type="text"
-      on_input={|e: &web_sys::InputEvent| {
-        if let Some(target) = e.target() {
-          let target: web_sys::HtmlInputElement = web_sys::HtmlInputElement::unchecked_from_js(target.into());
-          let value = target.value();
-          if value.len() > 0 {
-            *search_api_call_opt = Some(smithy::unwrapped_promise_from_future(crate::api::search(&value)));
-          } else {
-            *search_api_call_opt = None;
+    <p>
+      <input
+        class="form-control"
+        autofocus
+        type="text"
+        on_input={|e: &web_sys::InputEvent| {
+          if let Some(target) = e.target() {
+            let target: web_sys::HtmlInputElement = web_sys::HtmlInputElement::unchecked_from_js(target.into());
+            let value = target.value();
+            if value.len() > 0 {
+              *search_api_call_opt = Some(smithy::unwrapped_promise_from_future(crate::api::search(&value)));
+            } else {
+              *search_api_call_opt = None;
+            }
           }
-        }
-      }}
-    /></p>
+        }}
+      />
+    </p>
     {
       search_api_call_opt.as_ref().map(|ref mut search_api_call| {
         match &mut *search_api_call.borrow_mut() {

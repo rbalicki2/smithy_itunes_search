@@ -26,11 +26,11 @@ default = ["wee_alloc"]
 wee_alloc = { version = "0.4.2", optional = true }
 
 wasm-bindgen = { version = "0.2.48", features = ["nightly", "serde-serialize"] }
-smithy = { version="0.0.5", path="../smithy/crates/smithy", features = [
+smithy = { version="0.0.6", features = [
   "mouse-events",
   "input-events",
   "hash-change-events",
-  "smd-logs",
+  # "smd-logs",
   # "browser-logs",
   # "event-logs",
 ] }
