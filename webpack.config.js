@@ -23,7 +23,16 @@ module.exports = {
 
     new WasmPackPlugin({
       crateDirectory: __dirname,
-      extraArgs: "--out-name index"
+      extraArgs: "--out-name index",
+      watchDirectories: [
+        path.resolve(__dirname, "../smithy_css/crates/smithy_css/src"),
+        path.resolve(__dirname, "../smithy_css/crates/smithy_css_macro/src"),
+        path.resolve(__dirname, "../smithy/crates/smd_macro/src"),
+        path.resolve(__dirname, "../smithy/crates/smithy/src"),
+        path.resolve(__dirname, "../smithy/crates/smithy_core/src"),
+        path.resolve(__dirname, "../smithy/crates/smithy_types/src"),
+        path.resolve(__dirname, "../smithy/crates/smd_tests/src"),
+      ],
     }),
   ]
 };
