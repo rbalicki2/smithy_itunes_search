@@ -8,11 +8,15 @@
 
 ### Installing dependencies
 
-`yarn`
+`npm install`
+
+Also, install `wasm-pack` by visiting https://rustwasm.github.io/wasm-pack/installer/
 
 ### Running locally
 
 `npm start`
+
+N.B. if this takes forever, and says `ℹ️  Installing wasm-pack`, then I would recommend installing `wasm-pack` separately.
 
 ### Building for production
 
