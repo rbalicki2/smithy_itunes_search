@@ -1,4 +1,4 @@
-#![feature(proc_macro_hygiene, slice_patterns)]
+#![feature(proc_macro_hygiene, slice_patterns, exclusive_range_pattern)]
 
 mod api;
 mod types;
